@@ -14,20 +14,6 @@
 </head>
 
 <body>
-    <!-- ================POPUP-WINDOW=============== -->
-    <div id="popUp" class="popup-window">
-        <div class="popup-window__content">
-            <h2 class="popup-window__content-text">Пожалуйста, оставьте заявку, и специалисты нашей компании свяжутся с
-                вами в ближйшее время!</h2>
-            <form class="popup-window__form" action="">
-                <input class="popup-window__form-input" type="text" placeholder="Имя">
-                <input class="popup-window__form-input" type="text" placeholder="Номер телефона">
-                <a class="popup-window__form-btn btn" href="">ЗАКАЗАТЬ ЗВОНОК</a>
-            </form>
-        </div>
-    </div>
-    <!-- ================/POPUP-WINDOW=============== -->
-
     <!-- ================HEADER=============== -->
     <header class="header">
         <div class="container">
@@ -68,7 +54,7 @@
                             href="mailto:info@unovi.investments">info@unovi.investments</a>
                     </div>
                     <div class="header-top__btn">
-                        <button id="btn" class="header-top__btn-style btn">ЗАКАЗАТЬ ЗВОНОК</button>
+                        <button class="header-top__btn-style btn" data-modal-target="#modal_order">ЗАКАЗАТЬ ЗВОНОК</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +68,7 @@
                             href="mailto:info@unovi.investments">info@unovi.investments</a>
                     </div>
                     <div class="header-top__btn">
-                        <a class="header-top__btn-style btn" href="#">ЗАКАЗАТЬ ЗВОНОК</a>
+                        <button class="header-top__btn-style btn" data-modal-target="#modal_order">ЗАКАЗАТЬ ЗВОНОК</button>
                     </div>
                 </div>
                 <div class="header-content">
@@ -192,25 +178,12 @@
                 <input class="contact-form__input" type="tel" placeholder="Номер телефона">
                 <input class="contact-form__input" type="email" placeholder="Email">
             </form>
-            <a id="btn-advice" class="contact-form__btn btn">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</a>
-        </div>
-        <div id="popUp-advice" class="popup-window">
-            <div class="popup-window__content">
-                <h2 class="popup-window__content-text">Пожалуйста, оставьте заявку, и специалисты нашей компании
-                    свяжутся с
-                    вами в ближйшее время!</h2>
-                <form class="popup-window__form" action="">
-                    <input class="popup-window__form-input" type="text" placeholder="Имя">
-                    <input class="popup-window__form-input" type="text" placeholder="Номер телефона">
-                    <input class="popup-window__form-input" type="email" placeholder="Email">
-                    <button class="popup-window__form-btn btn">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</button>
-                </form>
-            </div>
+            <button class="contact-form__btn btn" data-modal-target="#modal_advice">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</button>
         </div>
     </section>
     <!-- ================/CONTACT=============== -->
-    
-    
+
+
     <!-- ================PREDICTION=============== -->
     <section class="prediction">
         <div class="container">
@@ -242,7 +215,7 @@
                     <div id="bg" class="prediction__bottom-bg"></div>
                     <div id="play" class="prediction__bottom-play" onclick="playPause()"></div>
                     <video id="video" class="prediction__bottom-video" poster="images/prediction-img-2.png">
-                        <source class="prediction__bottom-source" src="video/video.mp4">
+                        <source class="prediction__bottom-source" src="images/video.mp4">
                     </video>
                 </div>
             </div>
@@ -356,7 +329,7 @@
                 <input class="contact-form__input" type="tel" placeholder="Номер телефона">
                 <input class="contact-form__input" type="email" placeholder="Email">
             </form>
-            <a id="btn-advice" class="contact-form__btn btn">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</a>
+            <button class="contact-form__btn btn" data-modal-target="#modal_advice">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</button>
         </div>
     </section>
     </div>
@@ -401,7 +374,7 @@
                 <input class="contact-form__input" type="tel" placeholder="Номер телефона">
                 <input class="contact-form__input" type="email" placeholder="Email">
             </form>
-            <a id="btn-advice" class="contact-form__btn btn">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</a>
+            <button class="contact-form__btn btn" data-modal-target="#modal_advice">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</button>
         </div>
     </section>
     <!-- ================/CONTACT-QUESTIONS=============== -->
@@ -418,7 +391,7 @@
                             href="mailto:info@unovi.investments">info@unovi.investments</a>
                     </div>
                     <div class="footer__social-public">
-                        <a class="footer__btn btn" href="">ЗАКАЗАТЬ ЗВОНОК</a>
+                        <button class="footer__btn btn" data-modal-target="#modal_order">ЗАКАЗАТЬ ЗВОНОК</button>
                         <ul class="footer-list">
                             <li class="footer-list__item">
                                 <a href="" class="footer-list__link">
@@ -475,6 +448,43 @@
         </div>
     </footer>
     <!-- ================/FOOTER=============== -->
+
+
+<!-- =====================MODAL-WINDOW-ORDER======================== -->
+<div class="modal" id="modal_order">
+    <div class="modal-header">
+        <div class="modal-header__title">Пожалуйста, оставьте заявку, и специалисты нашей компании обязательно свяжутся с вами!</div>
+    </div>
+    <div class="modal-body">
+        <form class="modal-body__form" method="get" action="">
+            <input class="modal-body__input" type="text" placeholder="Имя">
+            <input class="modal-body__input" type="tel" placeholder="Номер телефона">
+            <button class="modal-body__btn btn" type="submit" >ЗАКАЗАТЬ ЗВОНОК</button>
+        </form>
+    </div>
+</div>
+<div id="overlay"></div>
+<!-- =====================/MODAL-WINDOW-ORDER======================== -->
+
+<!-- =====================MODAL-WINDOW-ADVICE======================== -->
+<div class="modal" id="modal_advice">
+    <div class="modal-header">
+        <div class="modal-header__title">Пожалуйста, оставьте заявку, и специалисты нашей компании обязательно свяжутся с вами!</div>
+    </div>
+    <div class="modal-body">
+        <form class="modal-body__form" method="get" action="">
+            <input class="modal-body__input" type="text" placeholder="Имя">
+            <input class="modal-body__input" type="tel" placeholder="Номер телефона">
+            <input class="modal-body__input" type="tel" placeholder="Email">
+            <button class="modal-body__btn btn" type="submit">КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</button>
+        </form>
+    </div>
+</div>
+<div id="overlay"></div>
+<!-- =====================/MODAL-WINDOW-ADVICE======================== -->
+
+
+
 
 
     <script src="js/libs.min.js"></script>
